@@ -15,3 +15,11 @@ export function isInRange(start: number, end: number): boolean {
 export function isStartEqualOrLessThanEnd(start: number, end: number): boolean {
   return start <= end
 }
+
+export function generateLine(start: number, end: number): string {
+  var line = ''
+  for (let index = start; index <= end; index++) {
+    line += index + '*' + end + '='  + index * end + '  '
+  }
+  return line.trim()
+}
