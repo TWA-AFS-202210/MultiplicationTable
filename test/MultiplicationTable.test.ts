@@ -17,27 +17,50 @@ describe('Multiplication Table', () => {
   })
 })
 
-it('should return true given start and end: 3, 5', () => {
-  // given
-  const start = 3
-  const end = 5
+describe('Multiplication Table', () => {
+  it('should render multiplication table of (2, 4)', () => {
+    // given
+    const table = new MultiplicationTable()
+    const start = 2
+    const end = 4
 
-  // when
-  const actual: boolean = isValid(start, end)
+    //when
+    const rendered = table.render(start, end)
 
-  // then
-  expect(actual).toBeTruthy()
+    //then
+    const expectResult = '2*2=4\n2*3=6  3*3=9\n2*4=8  3*4=12  4*4=16'
+    expect(rendered).toBe(expectResult)
+  })
 })
 
-it('should return true given start and end: 2, 4', () => {
-  // given
-  const start = 2
-  const end = 4
+describe('Multiplication Table', () => {
+  it('should render multiplication table of (2, 11)', () => {
+    // given
+    const table = new MultiplicationTable()
+    const start = 2
+    const end = 11
 
-  // when
-  const actual: string = generateLine(start, end)
+    //when
+    const rendered = table.render(start, end)
 
-  // then
-  const expectResult = '2*4=8  3*4=12  4*4=16'
-  expect(actual).toBe(expectResult)
+    //then
+    const expectResult = ''
+    expect(rendered).toBe(expectResult)
+  })
+})
+
+describe('Multiplication Table', () => {
+  it('should render multiplication table of (6, 5)', () => {
+    // given
+    const table = new MultiplicationTable()
+    const start = 6
+    const end = 5
+
+    //when
+    const rendered = table.render(start, end)
+
+    //then
+    const expectResult = ''
+    expect(rendered).toBe(expectResult)
+  })
 })

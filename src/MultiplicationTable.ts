@@ -1,8 +1,18 @@
 export class MultiplicationTable {
   public render(start: number, end: number): string{
-    return '1*1=1'
+    if (isValid(start, end) && isInRange(start, end)) {
+      var renderOutput = ''
+      for (let index = start; index <= end; index++) {
+        renderOutput += generateLine(start, index) + '\n'
+      }
+      return renderOutput.trim()
+    }
+    else{
+      return ''
+    }
   }
 }
+
 
 export function isValid(start: number, end: number): boolean {
   return isInRange(start, end) && isStartEqualOrLessThanEnd(start, end)
