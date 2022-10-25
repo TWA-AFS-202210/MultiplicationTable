@@ -1,4 +1,4 @@
-export function multiplicationTable(start: number, end: number): string {
+export function render(start: number, end: number): string {
   const isNotStartGreaterThanEnd = !isStartGreaterThanEnd(start,end)
   const isValidate = isInRange(start, end)
   if (isNotStartGreaterThanEnd&&isValidate) {
@@ -14,7 +14,7 @@ export function isStartGreaterThanEnd(start: number, end: number) {
 }
 export function isInRange(start: number, end: number): boolean {
   const range = Array.from(Array(10).keys()).map(x => x+1)
-  return range.findIndex(element => element === start) > 0 && range.findIndex(element => element === end) > 0
+  return range.findIndex(element => element === start) >= 0 && range.findIndex(element => element === end) >= 0
 }
 
 export function createTable(start: number, end: number):string {
