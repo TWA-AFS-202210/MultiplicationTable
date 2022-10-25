@@ -3,3 +3,15 @@ export class MultiplicationTable {
     return '1*1=1'
   }
 }
+
+export function isValid(start: number, end: number): boolean {
+  return isInRange(start, end) && isStartEqualOrLessThanEnd(start, end)
+}
+
+export function isInRange(start: number, end: number): boolean {
+  return (start <= 10) && (start >= 1) && (end <= 10) && (end >= 1)
+}
+
+export function isStartEqualOrLessThanEnd(start: number, end: number): boolean {
+  return start <= end
+}
