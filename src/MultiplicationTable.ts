@@ -2,7 +2,6 @@ export class MultiplicationTable {
   public render(start: number, end: number): string{
     if ((this.isStartNoGreaterThanEnd(start, end)) && (this.isRangeCorrect(start,end)))
     {
-      console.log(this.multiplicationTableConstructor(start,end))
       return this.multiplicationTableConstructor(start,end);
     }
     return ''
@@ -30,7 +29,6 @@ export class MultiplicationTable {
       }
       
       sttemp = temp.join('  ')
-      console.log(sttemp);
       multiplicationtable.push(sttemp);
     }
     
