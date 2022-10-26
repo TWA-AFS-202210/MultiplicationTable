@@ -14,7 +14,7 @@ export class MultiplicationTable {
   }
   
   public isLegalRange(start: number, end: number): boolean{
-    if(start > end || start < 1 || end > 10) {
+    if(start > end || start < 10 || start < 1 || end > 10) {
       return false
     }
     else {
