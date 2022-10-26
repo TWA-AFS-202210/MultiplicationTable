@@ -4,7 +4,7 @@ export class MultiplicationTable {
     {
       return this.multiplicationTableConstructor(start,end);
     }
-    return ''
+    return '';
   }
 
   isStartNoGreaterThanEnd(start: number, end: number): boolean {
@@ -31,7 +31,6 @@ export class MultiplicationTable {
       sttemp = temp.join('  ')
       multiplicationtable.push(sttemp);
     }
-    
     return multiplicationtable.join('\n');
   }
 }
