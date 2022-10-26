@@ -6,23 +6,24 @@ export class MultiplicationTable {
     return (!this.isValidRange(start, end) || !this.isInputsInteger(start, end))?false:true;
   }
   isValidRange(start: number, end: number): boolean {
-    const isValidStart = start <= 10 && start >= 0;
-    const isValidEnd = end <= 10 && start >= 0;
-    return isValidEnd && isValidStart && (start <= end);
+    return this.isWithinRange(start) && this.isWithinRange(end) && (start <= end);
+  }
+  isWithinRange(input:number){
+    return input<=10&&input>=0;
   }
   isInputsInteger(start: number, end: number): boolean {
     return Number.isInteger(start) && Number.isInteger(end);
   }
   generateMultable(start: number, end: number): string {
-    let res = "";
     const rowIndex = Array.from(Array(end - start + 1).keys()).map(x => x + start);
-    rowIndex.forEach(i => { res += i === end ? this.generateRowString(start, i) : this.generateRowString(start, i) + "\n" });
+    const rowStrings = rowIndex.map(i=>this.generateRowString(start,i));
+    let res = rowStrings.join('\n');
     return res;
   }
   generateRowString(rowStart: number, rowEnd: number): string {
-    let rowRes = "";
     const colIndex = Array.from(Array(rowEnd - rowStart + 1).keys()).map(x => x + rowStart);
-    colIndex.forEach(j => { rowRes += j === rowEnd ? this.generateCellString(j, rowEnd) : this.generateCellString(j, rowEnd) + "  " })
+    const cellStrings = colIndex.map(j=>this.generateCellString(j, rowEnd));
+    let rowRes = cellStrings.join('  ');
     return rowRes;
   }
   generateCellString(multiLeft: number, multiRight: number) {
