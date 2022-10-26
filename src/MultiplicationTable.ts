@@ -13,7 +13,7 @@ export class MultiplicationTable {
     return multiplicationTable.toString()
   }
   
-  public isLegalRange(start: number, end: number): boolean{
+  private isLegalRange(start: number, end: number): boolean{
     if(start > end || start < 10 || start < 1 || end > 10) {
       return false
     }
@@ -22,7 +22,7 @@ export class MultiplicationTable {
     }
   }
 
-  public multiplicationLineGenerator(start: number, end: number): string {
+  private multiplicationLineGenerator(start: number, end: number): string {
     var stringLine:Array<string> = []
     for(let i = start; i <= end; i++) {
       let result = i * end
@@ -34,7 +34,7 @@ export class MultiplicationTable {
     return stringLine.toString()
   }
 
-  public resultDecorator(start: number, end: number, result: number): string{
+  private resultDecorator(start: number, end: number, result: number): string{
     return start + '*' + end + '=' + result
   }
 }
