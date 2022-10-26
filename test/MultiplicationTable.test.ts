@@ -10,7 +10,7 @@ describe('Multiplication Table', () => {
     //when
     const rendered = table.render(start, end)
     //then
-    expect('1*1=1').toBe('1*1=1')
+    expect(rendered).toBe('1*1=1,')
   })
 
   it('should be invalid if given (0,9)', () => {
